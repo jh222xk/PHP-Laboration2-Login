@@ -7,7 +7,7 @@ class CookieStorage{
 	private $cookieExpireTime;
 	private $message;
 	
-	
+	//Skapar en cookie
 	public function cookieSave($string){
 		$this->cookieExpireTime = time()+250;
 		setcookie($this->cookieName, $string, $this->cookieExpireTime);
