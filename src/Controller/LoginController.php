@@ -57,7 +57,6 @@ class LoginController{
 		return $userAndPass;
 	}
 	
-	
 	public function collectAndVerifyInfoFromUser(){
 		
 		//Sparar undan värdet som är satt i inloggningsrutan.
