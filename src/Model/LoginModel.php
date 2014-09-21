@@ -7,7 +7,6 @@ class LoginModel{
 	private $randomString = "ffsdsfdfsdffsd";
 	private $storedUsername;
 	
-	
 	//Funktion som tar emot filtrerade användarnamn och lösenord.
 	public function loginValidation($username, $password)
 	{	
@@ -23,7 +22,6 @@ class LoginModel{
 		if($row_count > 0){
 			$_SESSION["ValidLogin"] = $username;
 			$username = $this->storedUsername;
-			
 			return true;
 		}else{return false;}
 	}
