@@ -23,6 +23,7 @@ class LoginController{
 	$this->loggedInView = new LoggedInView();
 	$this->serviceHelper = new serviceHelper();
 	$this->cookieStorage = new CookieStorage();
+	
 	$this->con = new mysqli("127.0.0.1", "root", "", "Login");
 	}
 	
