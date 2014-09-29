@@ -5,36 +5,37 @@
 	private $username;
 	private $password;
 	private $message;
-	
+
 	public function ViewLogin(){
-	$returnViewLogInHTML = "<h2>Laborationskod för jh222vp</h2>
-							<h3>Du är inte inloggad</h3>
-							<p>$this->message</p>
-							<form method='post' action='?Login'>
-							Användarnamn: <input type='text' name='username'>
-							Lösenord: <input type='password' name='password'>
-							Håll mig inloggad <input type='checkbox' name='check'>
-							<input type='submit' value='Logga in' name='submit'>
-							</form>";
+		$returnViewLogInHTML = "<h2>Laborationskod fÃ¶r jh222vp</h2>
+								<h3>Du Ã¤r inte inloggad</h3>
+								<p>$this->message</p>
+								<form method='post' action='?Login'>
+								AnvÃ¤ndarnamn: <input type='text' name='username' value='$this->username'>
+								LÃ¶senord: <input type='password' name='password'>
+								HÃ¥ll mig inloggad <input type='checkbox' name='check'>
+								<input type='submit' value='Logga in' name='submit'>
+								</form>";
 							
-	return $returnViewLogInHTML;
+		return $returnViewLogInHTML;
 	}
 	
-	//Funktion som kontrollerar om användarnamn och lösenord är satt
+	//Funktion som kontrollerar om anvÃ¤ndarnamn och lÃ¶senord Ã¤r satt
 	//samt sparar unden dessa..
 	public function getInformationFromUser(){
-	$usernameValue = $_POST['username'];
-	$passwordValue = $_POST['password'];
-	
-	if(isset($usernameValue)){
-	$this->username = $_POST['username'];
-	}
-	if(isset($passwordValue)){
-	$this->password = $_POST['password'];
+		$usernameValue = $_POST['username'];
+		$passwordValue = $_POST['password'];
+
+		if(isset($usernameValue)){
+			$this->username = $_POST['username'];
+		}
+
+		if(isset($passwordValue)){
+			$this->password = $_POST['password'];
 		}
 	}
 	
-	//Funktion som lyssnar/hämtar knapptrycket "login"
+	//Funktion som lyssnar/hÃ¤mtar knapptrycket "login"
 	public function getSubmit(){
 		if(isset($_POST['submit'])){
 			return true;
@@ -42,25 +43,26 @@
 			return false;}
 	}
 	
-	//Sätter username i den privata variabeln ovan
+	//SÃ¤tter username i den privata variabeln ovan
 	public function getUsername(){
 	return $this->username;
 	}
 	
-	//Sätter password i den privata variabeln ovan
+	//SÃ¤tter password i den privata variabeln ovan
 	public function getPassword(){
 	return $this->password;
 	}
 	
-	//Kontrollerar om något av fälten är tomma och sparar sedan undan felmeddelandet
+	//Kontrollerar om nÃ¥got av fÃ¤lten Ã¤r tomma och sparar sedan undan felmeddelandet
 	//i message variabeln som tillslut skrivs ut.
 	public function logInFailed($username, $password){
 	if($username === ""){
-		$this->message = "Användarnamn saknas";}
+		$this->message = "AnvÃ¤ndarnamn saknas";}
 	else if($password === ""){
-		$this->message = "Lösenord saknas";}
+		$this->message = "LÃ¶senord saknas";
+	}
 	else{
-		$this->message = "Felaktigt användarnamn och/eller lösenord";}
+		$this->message = "Felaktigt anvÃ¤ndarnamn och/eller lÃ¶senord";}
 	}
 	
 	//Meddelande som talar om att inloggningen lyckades.
@@ -68,7 +70,7 @@
 	return $this->message = "Inloggning lyckades";
 	}
 	
-	//Sätter meddelandet
+	//SÃ¤tter meddelandet
 	public function displayMessage($message){
 	$this->message = $message;
 	}
