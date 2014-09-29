@@ -11,7 +11,7 @@ class LoginModel{
 	public function loginValidation($username, $password)
 	{	
 		//Specificerar uppgifter för anslutning mot önskad datorbas samt SQL-Query
-		$myConnection = new mysqli("127.0.0.1", "root", "", "Login");
+		$myConnection = new mysqli("127.0.0.1", "appUser", "password", "lab4");
 		$sqlCommand = "SELECT * FROM members WHERE User='$username' AND Password='$password'";
 	
 		//Sparar undan resultatet i variabler

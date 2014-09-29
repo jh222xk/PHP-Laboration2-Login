@@ -1,17 +1,20 @@
 <?php
 
+require_once 'CurrentDateTime.php';
+
 class HTMLView{
 	
 	public function echoHTML($body){
-		setlocale(LC_ALL, "sv");
-		$clock = strftime("%A, den %d %B år %Y. Klockan är [%X]");
+		$currentTime = new \view\CurrentDateTime();
 		echo "<!DOCTYPE html>
-				<meta charset = \'UTF-8'\>
-				<link rel='stylesheet' type='text/css' media='all' href='CSS/style.css' />
 				<html>
+				<head>
+					<meta charset='utf-8'>
+					<link rel='stylesheet' type='text/css' media='all' href='CSS/style.css' />
+				</head>
 				<body>
 				$body
-				$clock
+				" . $currentTime->getCurrentDateTime() . "
 				</body>
 				</html>";
 	}

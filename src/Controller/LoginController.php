@@ -1,10 +1,10 @@
 <?php
 
-require_once('.\View\LoginView.php');
-require_once('.\Model\LoginModel.php');
-require_once('.\View\LoggedInView.php');
-require_once('.\ServiceHelper\ServiceHelper.php');
-require_once('.\Cookie\CookieStorage.php');
+require_once('View/LoginView.php');
+require_once('Model/LoginModel.php');
+require_once('View/LoggedInView.php');
+require_once('ServiceHelper/ServiceHelper.php');
+require_once('Cookie/CookieStorage.php');
 
 class LoginController{
 
@@ -24,7 +24,7 @@ class LoginController{
 	$this->serviceHelper = new serviceHelper();
 	$this->cookieStorage = new CookieStorage();
 	
-	$this->con = new mysqli("127.0.0.1", "root", "", "Login");
+	$this->con = new mysqli("127.0.0.1", "appUser", "password", "lab4");
 	}
 	
 	public function doController(){
